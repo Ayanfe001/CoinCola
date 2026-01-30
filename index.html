@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>CoinCola | Trade Gift Cards, Crypto & Social Accounts</title>
+    <meta name="description" content="The most trusted platform to sell Gift Cards, exchange Crypto, and buy premium Social Media accounts. Instant payment to your bank account.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    // Slate 900
+                            darker: '#020617',  // Slate 950
+                            light: '#1e293b',   // Slate 800
+                            accent: '#10b981',  // Emerald 500
+                            accentHover: '#059669', // Emerald 600
+                            gold: '#fbbf24',    // Amber 400
+                            goldHover: '#d97706' // Amber 600
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+
+        /* Form elements */
+        .input-field {
+            width: 100%;
+            background-color: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            transition: all 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+        
+        .tab-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .tab-btn.active {
+            background-color: #1e293b;
+            color: #10b981;
+            border-bottom: 2px solid #10b981;
+        }
+        .preview-img {
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            border: 2px dashed #475569;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+  <div id="smart-banner" class="md:hidden bg-gray-900 border-b border-gray-800 p-3 flex justify-between items-center relative z-[60]">
+    <div class="flex items-center">
+        <button onclick="document.getElementById('smart-banner').style.display='none'" class="text-gray-500 mr-3 text-xl">&times;</button>
+        <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center text-white font-bold mr-3 shadow-lg">
+            CC
+        </div>
+        <div>
+            <p class="text-xs font-bold text-white">CoinCola - Buy & Sell</p>
+            <p class="text-[10px] text-gray-400">CoinCola Brand • FREE</p>
+            <div class="flex text-[8px] text-yellow-500">★★★★★ (12k)</div>
+        </div>
+    </div>
+    <a href="#" onclick="alert('Redirecting to App Store...')" class="bg-white text-brand-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
+        OPEN
+    </a>
+</div>
+
+  <div id="preloader" class="fixed inset-0 z-[100] bg-brand-darker flex flex-col items-center justify-center transition-opacity duration-700">
+    <div class="relative">
+        <div class="w-16 h-16 border-4 border-brand-light rounded-full"></div>
+        <div class="w-16 h-16 border-4 border-t-brand-accent border-r-brand-gold border-b-transparent border-l-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+    </div>
+    <h2 class="mt-4 text-xl font-bold tracking-widest animate-pulse">COIN<span class="text-brand-accent">COLA</span></h2>
+</div>
+
+  <div id="cookie-banner" class="fixed bottom-0 w-full bg-slate-900 border-t border-gray-700 p-4 z-50 hidden md:flex justify-between items-center shadow-2xl">
+    <div class="flex items-center">
+        <i class="fa-solid fa-cookie-bite text-brand-gold text-2xl mr-4"></i>
+        <p class="text-sm text-gray-300">We use cookies to ensure you get the best trading rates and experience.</p>
+    </div>
+    <div class="flex gap-4">
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" class="text-gray-400 hover:text-white text-sm">Decline</button>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" class="bg-brand-accent text-white px-6 py-2 rounded text-sm font-bold hover:bg-emerald-600 transition">Accept</button>
+    </div>
+</div>
+
+<script>
+    // Show cookie banner after 2 seconds
+    setTimeout(() => {
+        document.getElementById('cookie-banner').classList.remove('hidden');
+        document.getElementById('cookie-banner').classList.add('flex');
+    }, 2000);
+</script>
+
+    <nav class="fixed w-full z-50 glass-header shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-coins text-brand-dark text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight">Coin<span class="text-brand-accent">Cola</span></span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition font-medium">About Us</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition font-medium">What We Buy</a>
+                    <a href="#how-it-works" class="text-gray-300 hover:text-white transition font-medium">How It Works</a>
+                    <a href="#trade-center" class="bg-brand-accent text-brand-dark px-6 py-2.5 rounded-full hover:bg-brand-accentHover transition font-bold shadow-lg shadow-emerald-500/20 transform hover:-translate-y-0.5">
+                        Start Trading
+                    </a>
+                </div>
+
+                <div class="md:hidden text-2xl text-gray-300">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        <div class="pt-20 bg-brand-darker border-b border-gray-800">
+        <div class="overflow-hidden whitespace-nowrap py-2 flex items-center">
+            <span class="bg-brand-accent text-brand-dark text-xs font-bold px-2 py-1 ml-4 rounded uppercase tracking-wider z-10 shadow-lg">Live Rates</span>
+            
+            <div class="animate-marquee inline-block text-sm text-gray-400">
+                <span class="mx-4" id="ticker-btc"><i class="fa-brands fa-bitcoin text-brand-gold"></i> BTC: Loading...</span>
+                <span class="mx-4" id="ticker-eth"><i class="fa-brands fa-ethereum text-gray-300"></i> ETH: Loading...</span>
+                <span class="mx-4" id="ticker-usdt"><i class="fa-solid fa-dollar-sign text-green-500"></i> USDT: Loading...</span>
+                
+                <span class="mx-4" id="ticker-steam"></span>
+                <span class="mx-4" id="ticker-itunes"></span>
+                <span class="mx-4" id="ticker-google"></span>
+                <span class="mx-4" id="ticker-amazon"></span>
+                
+                <span class="mx-4 text-brand-accent"> | </span> 
+                <span class="mx-4" id="ticker-btc-2"><i class="fa-brands fa-bitcoin text-brand-gold"></i> BTC: Loading...</span>
+                <span class="mx-4" id="ticker-eth-2"><i class="fa-brands fa-ethereum text-gray-300"></i> ETH: Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="hero" class="relative py-20 lg:py-32 px-4 overflow-hidden">
+        <div class="absolute inset-0 w-full h-full overflow-hidden -z-10">
+    <div class="absolute inset-0 bg-brand-dark/80 z-10"></div> <video autoplay loop muted playsinline class="w-full h-full object-cover">
+        <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+</div>
+
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-brand-accent/30 bg-brand-accent/5 text-brand-accent text-sm font-bold mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-accent mr-2 animate-pulse"></span>
+                Fastest Payouts in 2026
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight tracking-tight">
+                Turn Assets into <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-teal-400 to-brand-gold">Instant Bank Alert</span>
+            </h1>
+            
+            <p class="text-slate-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+                CoinCola is the premier bridge between your digital assets and real-world cash. We buy Crypto and Gift Cards at the best market rates, paid directly to your local bank account.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="#trade-center" onclick="switchTab('giftcard')" class="group bg-white text-brand-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    <i class="fa-solid fa-gift mr-2 group-hover:rotate-12 transition-transform"></i> Sell Gift Card
+                </a>
+                <a href="#trade-center" onclick="switchTab('crypto')" class="group border border-brand-accent text-brand-accent px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-accent hover:text-white transition transform hover:scale-105">
+                    <i class="fa-brands fa-bitcoin mr-2 group-hover:bounce transition"></i> Sell Crypto
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 border-t border-gray-800 pt-10">
+                <div>
+                    <h3 class="text-3xl font-bold text-white">50K+</h3>
+                    <p class="text-gray-500 text-sm">Trades Completed</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-white">5 Mins</h3>
+                    <p class="text-gray-500 text-sm">Average Payout</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-white">24/7</h3>
+                    <p class="text-gray-500 text-sm">Active Support</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-white">100%</h3>
+                    <p class="text-gray-500 text-sm">Secure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script>
+    // Logic to animate numbers when scrolled into view
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                const increment = target / 50; 
+                
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+                observer.unobserve(counter); // Only animate once
+            }
+        });
+    });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+</script>
+
+  <div class="border-y border-gray-800 bg-black/40 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-xs text-gray-500 uppercase tracking-widest mb-6 font-bold">Secure Transactions With</p>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            <div class="flex items-center gap-2 text-2xl font-bold text-white"><i class="fa-solid fa-building-columns text-green-500"></i> OPay</div>
+            <div class="flex items-center gap-2 text-2xl font-bold text-white"><i class="fa-solid fa-hand-holding-dollar text-blue-500"></i> PalmPay</div>
+            <div class="flex items-center gap-2 text-2xl font-bold text-white"><i class="fa-brands fa-bitcoin text-orange-500"></i> Binance</div>
+            <div class="flex items-center gap-2 text-2xl font-bold text-white"><i class="fa-solid fa-shield-cat text-purple-500"></i> Kuda</div>
+            <div class="flex items-center gap-2 text-2xl font-bold text-white"><i class="fa-brands fa-ethereum text-gray-300"></i> TrustWallet</div>
+        </div>
+    </div>
+</div>
+
+    <section id="about" class="py-24 bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-brand-accent to-blue-600 rounded-2xl blur-lg opacity-30 transform rotate-3"></div>
+                <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crypto Trading" class="relative rounded-2xl shadow-2xl border border-gray-700">
+            </div>
+            <div>
+                <h2 class="text-brand-accent font-bold tracking-wide uppercase mb-3">About CoinCola</h2>
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">We Make Digital Trading Simple & Secure.</h3>
+                <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                    Founded with the mission to simplify digital exchange, CoinCola has grown into a trusted hub for thousands of users. We understand the need for speed when it comes to finances. 
+                </p>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    Whether you have unused Gift Cards from Amazon or Apple, or you want to liquidate your Bitcoin or USDT earnings, our automated system and dedicated agents ensure you get credited in minutes.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-circle-check text-brand-accent mr-3"></i>
+                        <span class="text-gray-200">Verified Corporate Entity</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-circle-check text-brand-accent mr-3"></i>
+                        <span class="text-gray-200">Zero Transaction Fees on Sales</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-circle-check text-brand-accent mr-3"></i>
+                        <span class="text-gray-200">Best Market Exchange Rates</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+  <section class="py-16 px-4 bg-brand-darker border-y border-gray-800">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-4">Why Smart Traders Choose CoinCola</h2>
+            <p class="text-gray-400">Don't settle for less. Compare our features.</p>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-center border-collapse">
+                <thead>
+                    <tr>
+                        <th class="p-4 text-left">Feature</th>
+                        <th class="p-4 bg-brand-accent/10 border-t-4 border-brand-accent rounded-t-xl text-brand-accent text-xl font-bold">CoinCola</th>
+                        <th class="p-4 text-gray-500">Other Vendors</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                    <tr class="border-b border-gray-800">
+                        <td class="p-4 text-left font-bold">Payout Speed</td>
+                        <td class="p-4 bg-brand-accent/5 font-bold text-white">Instant (Automated)</td>
+                        <td class="p-4 text-gray-500">1 - 24 Hours</td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="p-4 text-left font-bold">Exchange Rate</td>
+                        <td class="p-4 bg-brand-accent/5 font-bold text-white">High Market Rate</td>
+                        <td class="p-4 text-gray-500">Low / Hidden Fees</td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="p-4 text-left font-bold">Availability</td>
+                        <td class="p-4 bg-brand-accent/5 font-bold text-white">24/7 Online</td>
+                        <td class="p-4 text-gray-500">Business Hours Only</td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="p-4 text-left font-bold">Security</td>
+                        <td class="p-4 bg-brand-accent/5 font-bold text-white">Escrow Protected</td>
+                        <td class="p-4 text-gray-500">High Risk</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4"></td>
+                        <td class="p-4 bg-brand-accent/5 rounded-b-xl">
+                            <i class="fa-solid fa-circle-check text-2xl text-brand-accent"></i>
+                        </td>
+                        <td class="p-4">
+                            <i class="fa-solid fa-circle-xmark text-2xl text-gray-600"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+  <div class="bg-black/50 py-3 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-xs text-gray-500">
+        <span class="text-green-500 font-mono"><i class="fa-solid fa-circle text-[8px] mr-1 animate-pulse"></i> System Active</span>
+        <div class="hidden md:flex space-x-6">
+            <span>🚀 Emmanuel just sold $100 Steam</span>
+            <span>🚀 Chioma received ₦55,000</span>
+            <span>🚀 David sold 0.05 BTC</span>
+        </div>
+        <span><i class="fa-solid fa-shield-halved text-brand-accent"></i> 100% Secure</span>
+    </div>
+</div>
+
+    <section id="services" class="py-24 px-4 bg-brand-darker">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm">What We Do</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">Our Core Services</h2>
+                <div class="h-1 w-20 bg-brand-accent mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-3xl hover:-translate-y-2 transition duration-300 group">
+                    <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-purple-500/20 transition">
+                        <i class="fa-solid fa-ticket text-purple-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Gift Card Trading</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">Don't let your gift cards expire. We buy Steam, Apple, Google Play, Amazon, Vanilla, Nordstrom, Sephora and more at the highest rates in the market.</p>
+                    <a href="#trade-center" onclick="switchTab('giftcard')" class="text-purple-400 font-bold hover:text-purple-300 flex items-center">
+                        Trade Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl hover:-translate-y-2 transition duration-300 group relative border-brand-accent/30">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl">HOT</div>
+                    <div class="w-16 h-16 bg-brand-accent/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-accent/20 transition">
+                        <i class="fa-solid fa-arrow-right-arrow-left text-brand-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Crypto Exchange</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">Sell your BTC, ETH, USDT, SOL, and LTC effortlessly. We provide a secure wallet address for transfer and pay immediately after 1 confirmation.</p>
+                    <a href="#trade-center" onclick="switchTab('crypto')" class="text-brand-accent font-bold hover:text-emerald-300 flex items-center">
+                        Sell Crypto <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl hover:-translate-y-2 transition duration-300 group">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-500/20 transition">
+                        <i class="fa-solid fa-users text-blue-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Social Media Assets</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">Looking for instant credibility? Buy established accounts for Instagram, TikTok, Twitter/X, and Facebook with real followers and organic engagement.</p>
+                    <a href="#trade-center" onclick="switchTab('social')" class="text-blue-400 font-bold hover:text-blue-300 flex items-center">
+                        View Accounts <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-24 bg-brand-light border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">How It Works</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Trading with CoinCola is as easy as 1-2-3. We've streamlined the process to ensure you get paid without stress.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12 relative">
+                <div class="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-transparent via-gray-700 to-transparent z-0"></div>
+
+                <div class="text-center relative z-10">
+                    <div class="w-24 h-24 bg-brand-dark border-4 border-brand-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                        <span class="text-3xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Initiate Trade</h3>
+                    <p class="text-gray-400 text-sm">Fill out the form below with your asset details (Gift Card or Crypto) and your bank information.</p>
+                </div>
+
+                <div class="text-center relative z-10">
+                    <div class="w-24 h-24 bg-brand-dark border-4 border-brand-gold rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(251,191,36,0.3)]">
+                        <span class="text-3xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Transfer Asset</h3>
+                    <p class="text-gray-400 text-sm">Upload card image or send crypto to the wallet address displayed on the screen.</p>
+                </div>
+
+                <div class="text-center relative z-10">
+                    <div class="w-24 h-24 bg-brand-dark border-4 border-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                        <span class="text-3xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Get Paid</h3>
+                    <p class="text-gray-400 text-sm">Click "Proceed". Our agent validates the transaction and credits your bank account instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section class="py-10 px-4 bg-brand-light border-y border-gray-700">
+    <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-2xl font-bold mb-6">🧮 Quick Payout Calculator</h3>
+        
+        <div class="bg-brand-dark p-6 rounded-xl border border-gray-600 flex flex-col md:flex-row gap-4 items-end">
+            <div class="w-full">
+                <label class="block text-gray-400 text-sm mb-2 text-left">Asset Type</label>
+                <select id="calc-asset" class="w-full bg-slate-800 border border-gray-600 rounded-lg p-3 text-white">
+                    <option value="1250">Steam Card (₦1,250)</option>
+                    <option value="1100">iTunes Card (₦1,100)</option>
+                    <option value="1650">USDT (₦1,650)</option>
+                    <option value="168000000">Bitcoin (1 BTC)</option>
+                </select>
+            </div>
+            
+            <div class="w-full">
+                <label class="block text-gray-400 text-sm mb-2 text-left">Amount ($ or Units)</label>
+                <input type="number" id="calc-amount" placeholder="100" class="w-full bg-slate-800 border border-gray-600 rounded-lg p-3 text-white">
+            </div>
+
+            <div class="w-full">
+                <label class="block text-brand-accent text-sm mb-2 text-left font-bold">You Receive (₦)</label>
+                <input type="text" id="calc-result" readonly value="0.00" class="w-full bg-black border border-brand-accent rounded-lg p-3 text-brand-accent font-bold text-xl">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple logic for the calculator
+        const assetSelect = document.getElementById('calc-asset');
+        const amountInput = document.getElementById('calc-amount');
+        const resultInput = document.getElementById('calc-result');
+
+        function calculate() {
+            const rate = parseFloat(assetSelect.value);
+            const amount = parseFloat(amountInput.value) || 0;
+            const total = rate * amount;
+            resultInput.value = "₦" + total.toLocaleString();
+        }
+
+        assetSelect.addEventListener('change', calculate);
+        amountInput.addEventListener('input', calculate);
+    </script>
+</section>
+
+  <div class="bg-gradient-to-r from-red-900 via-red-800 to-brand-dark border-y border-red-500/30 py-3 text-center px-4">
+    <p class="text-white font-bold flex items-center justify-center gap-2 text-sm md:text-base">
+        <span class="animate-pulse w-2 h-2 bg-red-500 rounded-full"></span>
+        🔥 FLASH OFFER: High Rates for Gift Cards expire in: 
+        <span id="countdown" class="font-mono text-xl text-brand-gold">00:45:21</span>
+    </p>
+</div>
+
+<script>
+    // Countdown Timer Logic
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = "00:" + minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                timer = duration; // Reset when it hits zero
+            }
+        }, 1000);
+    }
+
+    // Start 45 minute timer on load
+    window.addEventListener('load', function () {
+        var fortyFiveMinutes = 60 * 45;
+        var display = document.querySelector('#countdown');
+        startTimer(fortyFiveMinutes, display);
+    });
+</script>
+
+    <section id="trade-center" class="py-24 px-4 bg-brand-darker relative">
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-brand-accent font-bold tracking-wider uppercase text-sm">Trade Center</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Start A Transaction</h2>
+                <p class="text-gray-400 mt-4">Select a category below. You will be redirected to WhatsApp to finalize the deal securely.</p>
+            </div>
+
+            <div class="bg-brand-light rounded-3xl overflow-hidden shadow-2xl border border-gray-700">
+                <div class="flex border-b border-gray-700 bg-brand-dark/50">
+                    <button onclick="switchTab('giftcard')" id="tab-giftcard" class="tab-btn active flex-1 py-6 font-bold text-lg transition duration-200 hover:bg-gray-800">
+                        <i class="fa-solid fa-gift mr-2"></i> Sell Gift Card
+                    </button>
+                    <button onclick="switchTab('crypto')" id="tab-crypto" class="tab-btn flex-1 py-6 font-bold text-lg transition duration-200 hover:bg-gray-800">
+                        <i class="fa-brands fa-bitcoin mr-2"></i> Sell Crypto
+                    </button>
+                    <button onclick="switchTab('social')" id="tab-social" class="tab-btn flex-1 py-6 font-bold text-lg transition duration-200 hover:bg-gray-800">
+                        <i class="fa-solid fa-hashtag mr-2"></i> Buy Accounts
+                    </button>
+                </div>
+
+                <div class="p-6 md:p-12">
+                    
+                    <div id="content-giftcard" class="block animate-fade-in">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-gift text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Sell Gift Card</h3>
+                                <p class="text-sm text-gray-400">Best rates for Steam, Apple, Amazon & more.</p>
+                            </div>
+                        </div>
+
+                        <form onsubmit="handleGiftCard(event)" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Card Type</label>
+                                    <div class="relative">
+                                        <select id="gc-type" class="input-field appearance-none cursor-pointer">
+                                            <option value="Steam Wallet">Steam Wallet</option>
+                                            <option value="Apple/iTunes">Apple / iTunes</option>
+                                            <option value="Google Play">Google Play</option>
+                                            <option value="Amazon">Amazon</option>
+                                            <option value="Razer Gold">Razer Gold</option>
+                                            <option value="Vanilla Visa">Vanilla Visa</option>
+                                            <option value="Amex">American Express</option>
+                                            <option value="Sephora">Sephora</option>
+                                            <option value="Nordstrom">Nordstrom</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-gray-500 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Country/Currency</label>
+                                    <div class="relative">
+                                        <select id="gc-currency" class="input-field appearance-none cursor-pointer">
+                                            <option value="USD">USD ($) - USA</option>
+                                            <option value="EUR">EUR (€) - Euro</option>
+                                            <option value="GBP">GBP (£) - UK</option>
+                                            <option value="CAD">CAD ($) - Canada</option>
+                                            <option value="AUD">AUD ($) - Australia</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-gray-500 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                          <div>
+    <label class="block text-gray-400 text-sm font-bold mb-2">Card Code (Optional)</label>
+    <input type="text" id="gc-code" placeholder="e.g. XG-1234-ABCD-5678" class="input-field border-brand-accent/30 focus:border-brand-accent">
+    <p class="text-xs text-gray-500 mt-1"><i class="fa-solid fa-lock mr-1"></i> Data is encrypted. Leave blank if uploading an image.</p>
+</div>
+
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Total Amount</label>
+                                <input type="number" id="gc-amount" placeholder="e.g. 100" class="input-field" required>
+                            </div>
+
+                            <hr class="border-gray-700 my-6">
+                            
+                            <h4 class="text-brand-accent font-bold mb-4 uppercase text-xs tracking-wider">Where should we send the money?</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Bank Name</label>
+                                    <input type="text" id="gc-bank-name" placeholder="e.g. Opay, GTBank" class="input-field" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Account Number</label>
+                                    <input type="tel" id="gc-account-num" placeholder="0123456789" class="input-field" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Account Name</label>
+                                <input type="text" id="gc-account-name" placeholder="Name on account" class="input-field" required>
+                            </div>
+
+                            <div class="mt-6">
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Card Image (Front & Back)</label>
+                                <div class="relative border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-brand-accent hover:bg-brand-accent/5 transition cursor-pointer group" onclick="document.getElementById('gc-image').click()">
+                                    <i class="fa-solid fa-cloud-arrow-up text-3xl mb-3 text-gray-500 group-hover:text-brand-accent transition"></i>
+                                    <p class="text-sm text-gray-400">Click to upload card images</p>
+                                    <input type="file" id="gc-image" class="hidden" accept="image/*" onchange="previewImage(this, 'gc-preview')">
+                                </div>
+                                <div id="gc-preview" class="hidden grid grid-cols-2 gap-2 mt-2"></div>
+                            </div>
+
+                          <div class="flex items-start mb-6">
+    <div class="flex items-center h-5">
+        <input id="terms-checkbox-gc" type="checkbox" class="w-4 h-4 border border-gray-600 rounded bg-slate-800 focus:ring-3 focus:ring-brand-accent transition cursor-pointer" required>
+    </div>
+    <label for="terms-checkbox-gc" class="ml-2 text-sm font-medium text-gray-400">
+        I agree to the <a href="#" class="text-brand-accent hover:underline">Terms of Service</a>. I confirm this asset belongs to me.
+    </label>
+</div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-brand-accent to-brand-accentHover text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-emerald-500/30 transition transform hover:-translate-y-1">
+                                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Submit Trade Request
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="content-crypto" class="hidden animate-fade-in">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-brand-gold/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa-brands fa-bitcoin text-brand-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Sell Cryptocurrency</h3>
+                                <p class="text-sm text-gray-400">Instant payout for BTC, USDT, ETH.</p>
+                            </div>
+                        </div>
+
+                        <form onsubmit="handleCrypto(event)" class="space-y-6">
+                            
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Select Coin</label>
+                                <div class="relative">
+                                    <select id="crypto-coin" onchange="updateWalletAddress()" class="input-field appearance-none cursor-pointer border-brand-gold/50 focus:border-brand-gold">
+                                        <option value="Bitcoin (BTC)">Bitcoin (BTC)</option>
+                                        <option value="Ethereum (ETH)">Ethereum (ETH)</option>
+                                        <option value="USDT (TRC20)">USDT (TRC20)</option>
+                                        <option value="USDT (ERC20)">USDT (ERC20)</option>
+                                        <option value="Solana (SOL)">Solana (SOL)</option>
+                                        <option value="Litecoin (LTC)">Litecoin (LTC)</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-brand-gold pointer-events-none"></i>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/40 p-6 rounded-xl border border-brand-gold/30">
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-bold">CoinCola Wallet Address</p>
+                                    <span class="text-xs text-gray-500">Only send <span id="coin-label">BTC</span></span>
+                                </div>
+                                <div class="flex items-center justify-between bg-black/60 p-3 rounded-lg border border-gray-700">
+                                    <code id="wallet-display" class="text-sm md:text-base break-all font-mono text-white">Select a coin...</code>
+                                    <button type="button" onclick="copyWallet()" class="ml-3 text-gray-400 hover:text-white bg-gray-800 p-2 rounded hover:bg-gray-700 transition">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Ensure you select the correct network. Lost coins cannot be recovered.</p>
+                            </div>
+
+                          <div class="flex flex-col items-center justify-center mt-4 p-4 bg-white rounded-lg w-fit mx-auto">
+    <img id="crypto-qr" src="" alt="Wallet QR" class="w-32 h-32 object-contain">
+    <p class="text-black text-xs font-bold mt-2">Scan to Pay</p>
+</div>
+
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Amount Sent</label>
+                                <input type="text" id="crypto-amount" placeholder="e.g. 0.05 BTC or $500" class="input-field" required>
+                            </div>
+
+                            <hr class="border-gray-700 my-6">
+
+                            <h4 class="text-brand-gold font-bold mb-4 uppercase text-xs tracking-wider">Where should we send the money?</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Bank Name</label>
+                                    <input type="text" id="crypto-bank-name" placeholder="e.g. Opay, GTBank" class="input-field" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Account Number</label>
+                                    <input type="tel" id="crypto-account-num" placeholder="0123456789" class="input-field" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Account Name</label>
+                                <input type="text" id="crypto-account-name" placeholder="Name on account" class="input-field" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Upload Transaction Proof</label>
+                                <div class="relative border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-brand-gold hover:bg-brand-gold/5 transition cursor-pointer group" onclick="document.getElementById('crypto-image').click()">
+                                    <i class="fa-solid fa-receipt text-3xl mb-3 text-gray-500 group-hover:text-brand-gold transition"></i>
+                                    <p class="text-sm text-gray-400">Click to upload screenshot</p>
+                                    <input type="file" id="crypto-image" class="hidden" accept="image/*" onchange="previewImage(this, 'crypto-preview')">
+                                </div>
+                                <div id="crypto-preview" class="hidden mt-2"></div>
+                            </div>
+
+                          <div class="flex items-start mb-6">
+    <div class="flex items-center h-5">
+        <input id="terms-checkbox-gc" type="checkbox" class="w-4 h-4 border border-gray-600 rounded bg-slate-800 focus:ring-3 focus:ring-brand-accent transition cursor-pointer" required>
+    </div>
+    <label for="terms-checkbox-gc" class="ml-2 text-sm font-medium text-gray-400">
+        I agree to the <a href="#" class="text-brand-accent hover:underline">Terms of Service</a>. I confirm this asset belongs to me.
+    </label>
+</div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-brand-gold to-brand-goldHover text-brand-dark font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-yellow-500/20 transition transform hover:-translate-y-1">
+                                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> I Have Sent The Coins
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="content-social" class="hidden animate-fade-in">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-hashtag text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Buy Social Accounts</h3>
+                                <p class="text-sm text-gray-400">Grow your influence instantly.</p>
+                            </div>
+                        </div>
+
+                        <form onsubmit="handleSocial(event)" class="space-y-6">
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Platform</label>
+                                    <div class="relative">
+                                        <select id="social-platform" class="input-field appearance-none cursor-pointer focus:border-blue-400">
+                                            <option value="Instagram">Instagram</option>
+                                            <option value="TikTok">TikTok</option>
+                                            <option value="Twitter/X">Twitter / X</option>
+                                            <option value="Facebook Page">Facebook Page</option>
+                                            <option value="YouTube Channel">YouTube Channel</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-blue-400 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 text-sm font-bold mb-2">Niche/Category</label>
+                                    <div class="relative">
+                                        <select id="social-niche" class="input-field appearance-none cursor-pointer">
+                                            <option value="Personal/Old Account">Personal / Old Account</option>
+                                            <option value="Fashion & Beauty">Fashion & Beauty</option>
+                                            <option value="Business/Motivation">Business / Motivation</option>
+                                            <option value="Comedy/Meme">Comedy / Meme</option>
+                                            <option value="Crypto/Finance">Crypto / Finance</option>
+                                            <option value="Any US Based Account">Any US Based Account</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-gray-500 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Desired Follower Count</label>
+                                <select id="social-followers" class="input-field">
+                                    <option value="1k - 5k Followers">1k - 5k Followers</option>
+                                    <option value="5k - 10k Followers">5k - 10k Followers</option>
+                                    <option value="10k - 50k Followers">10k - 50k Followers</option>
+                                    <option value="50k - 100k Followers">50k - 100k Followers</option>
+                                    <option value="100k+ Followers">100k+ Followers</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-400 text-sm font-bold mb-2">Your Budget (Approx.)</label>
+                                <input type="text" id="social-budget" placeholder="e.g. 50,000 Naira" class="input-field">
+                            </div>
+
+                            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-4 rounded-xl hover:bg-blue-600 transition shadow-lg shadow-blue-500/20">
+                                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Inquire on WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="review" class="py-24 px-4 bg-brand-darker relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">What Traders Say</h2>
+            <p class="text-gray-400">Join 50,000+ satisfied customers who trust CoinCola.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-brand-light p-6 rounded-2xl border border-gray-700 hover:border-brand-accent transition duration-300">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-12 h-12 rounded-full mr-4 border-2 border-brand-accent">
+                    <div>
+                        <h4 class="font-bold text-white">Emmanuel Okafor</h4>
+                        <div class="flex text-yellow-500 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm italic">"I was skeptical at first, but these guys are the real deal. Sold my $200 Steam card and got credited in Opay within 5 minutes. fast response!"</p>
+            </div>
+
+            <div class="bg-brand-light p-6 rounded-2xl border border-gray-700 hover:border-brand-accent transition duration-300">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-12 h-12 rounded-full mr-4 border-2 border-brand-accent">
+                    <div>
+                        <h4 class="font-bold text-white">Chioma Adebayo</h4>
+                        <div class="flex text-yellow-500 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm italic">"Best rates I've seen for USDT. The transaction was smooth and the customer support on WhatsApp is very polite. Highly recommended."</p>
+            </div>
+
+            <div class="bg-brand-light p-6 rounded-2xl border border-gray-700 hover:border-brand-accent transition duration-300">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="User" class="w-12 h-12 rounded-full mr-4 border-2 border-brand-accent">
+                    <div>
+                        <h4 class="font-bold text-white">David Johnson</h4>
+                        <div class="flex text-yellow-500 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm italic">"Bought an Instagram account for my business. It had real followers just as described. Process was transparent and secure."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section id="faq" class="py-20 px-4 bg-brand-light">
+    <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <details class="group bg-brand-dark p-4 rounded-lg cursor-pointer border border-gray-700 open:border-brand-accent transition">
+                <summary class="font-bold flex justify-between items-center text-lg">
+                    How long does payment take?
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <p class="text-gray-400 mt-3 pl-2 border-l-2 border-brand-accent">
+                    For Gift Cards, verification takes 5-10 minutes. For Crypto, we pay immediately after 1 network confirmation.
+                </p>
+            </details>
+
+            <details class="group bg-brand-dark p-4 rounded-lg cursor-pointer border border-gray-700 open:border-brand-accent transition">
+                <summary class="font-bold flex justify-between items-center text-lg">
+                    Is CoinCola legit?
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <p class="text-gray-400 mt-3 pl-2 border-l-2 border-brand-accent">
+                    Yes! We are a registered vendor with over 50,000 successful trades. We prioritize transparency and speed.
+                </p>
+            </details>
+        </div>
+    </div>
+</section>
+
+  <section class="py-16 px-4 bg-brand-dark border-t border-gray-800">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-6 text-white"><i class="fa-solid fa-user-shield text-brand-accent mr-2"></i> Verify An Agent</h2>
+        <p class="text-gray-400 mb-8">Avoid Scammers! Enter a WhatsApp number below to verify if they are an official CoinCola staff member.</p>
+        
+        <div class="relative max-w-lg mx-auto">
+            <input type="text" id="verify-input" placeholder="Enter Phone Number (e.g. 08143361701)" class="w-full bg-slate-900 border border-gray-600 rounded-full py-4 px-6 focus:border-brand-accent focus:outline-none text-white">
+            <button onclick="verifyAgent()" class="absolute right-2 top-2 bottom-2 bg-brand-accent text-white font-bold px-6 rounded-full hover:bg-emerald-600 transition">
+                Check
+            </button>
+        </div>
+        <p id="verify-result" class="mt-4 font-bold text-lg hidden"></p>
+    </div>
+</section>
+
+<script>
+    function verifyAgent() {
+        const input = document.getElementById('verify-input').value.replace(/\s+/g, '').replace(/-/g, ''); // Remove spaces/dashes
+        const result = document.getElementById('verify-result');
+        const myNumber = "08143361701"; // YOUR OFFICIAL NUMBER
+        const myNumber2 = "8143361701"; // Variation
+        
+        if(input.includes(myNumber) || input.includes(myNumber2)) {
+            result.innerHTML = '<span class="text-green-500"><i class="fa-solid fa-circle-check"></i> OFFICIAL AGENT: This number is verified and safe.</span>';
+        } else {
+            result.innerHTML = '<span class="text-red-500"><i class="fa-solid fa-triangle-exclamation"></i> WARNING: This number is NOT in our database. Do not trade!</span>';
+        }
+        result.classList.remove('hidden');
+    }
+</script>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto bg-gradient-to-r from-green-900 to-brand-dark border border-brand-accent/30 rounded-3xl p-8 md:p-16 relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-accent/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10 md:w-2/3 mb-8 md:mb-0">
+            <h2 class="text-3xl font-bold mb-4 text-white">Never Miss a High Rate Update!</h2>
+            <p class="text-gray-300 mb-6">Join our exclusive WhatsApp TV/Community. Be the first to know when rates go up, get daily crypto news, and participate in our weekly giveaways.</p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <button onclick="window.open('https://wa.me/2348143361701?text=Save%20me%20as%20CoinCola%20TV', '_blank')" class="bg-brand-accent text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-600 transition shadow-lg">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Join WhatsApp TV
+                </button>
+                <a href="https://t.me/2348143361701"><button class="border border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-brand-dark transition">
+                    <i class="fa-brands fa-telegram mr-2"></i> Telegram Channel
+                </button></a>
+            </div>
+        </div>
+
+        <div class="relative z-10 md:w-1/3 flex justify-center">
+            <i class="fa-solid fa-bullhorn text-8xl text-brand-accent/50 rotate-12"></i>
+        </div>
+    </div>
+</section>
+
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto bg-gradient-to-br from-purple-900 to-brand-dark border border-purple-500/30 rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center">
+        <div class="relative z-10 md:w-1/2 mb-8 md:mb-0">
+            <span class="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Bonus</span>
+            <h2 class="text-3xl font-bold mt-4 mb-4 text-white">Refer a Friend, Earn ₦1,000</h2>
+            <p class="text-gray-300 mb-6">Got friends with crypto or gift cards? Send them our way! If they trade over $100, we credit your wallet instantly.</p>
+            <button onclick="openWhatsApp('I want to join the referral program. My name is: ')" class="bg-white text-purple-900 font-bold px-8 py-3 rounded-full hover:bg-gray-200 transition">
+                Start Earning <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+        <div class="md:w-1/2 flex justify-center relative z-10">
+            <div class="w-64 h-48 bg-purple-500/20 backdrop-blur-md rounded-xl border border-purple-400/30 flex items-center justify-center transform rotate-6 hover:rotate-0 transition duration-500">
+                <i class="fa-solid fa-users-rays text-6xl text-purple-300"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section class="py-20 px-4 bg-brand-darker">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">CoinCola Academy</h2>
+                <p class="text-gray-400">Latest updates on Crypto and Gift Card rates.</p>
+            </div>
+            <a href="#" class="text-brand-accent hover:text-white transition hidden md:block">View All Posts <i class="fa-solid fa-arrow-right ml-1"></i></a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-xl mb-4">
+                    <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="News" class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Market Update</span>
+                <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-brand-accent transition">Why Steam Card rates are dropping in 2026</h3>
+                <p class="text-gray-500 text-sm">Understanding the market fluctuations and the best time to sell your cards.</p>
+            </article>
+
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-xl mb-4">
+                    <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="News" class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+                <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Crypto Tips</span>
+                <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-brand-accent transition">How to check if your USDT is TRC20 or ERC20</h3>
+                <p class="text-gray-500 text-sm">Don't lose your money. Learn the difference between the networks before sending.</p>
+            </article>
+
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-xl mb-4">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="News" class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
+                <span class="text-blue-400 text-xs font-bold uppercase tracking-wider">Social Growth</span>
+                <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-brand-accent transition">3 Secrets to growing a TikTok account securely</h3>
+                <p class="text-gray-500 text-sm">Buying an account is just the first step. Here is how to keep it safe.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+  <div class="border-t border-gray-800 bg-brand-darker">
+    <div class="max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-6 md:mb-0">
+            <h3 class="text-2xl font-bold text-white mb-2"><i class="fa-regular fa-envelope text-brand-accent mr-2"></i> Stay in the loop</h3>
+            <p class="text-gray-400 text-sm">Get the latest crypto rates and market updates sent to your inbox.</p>
+        </div>
+        
+        <div class="flex w-full md:w-auto">
+            <input type="email" placeholder="Enter your email" class="bg-slate-800 text-white px-4 py-3 rounded-l-lg border border-gray-700 focus:outline-none focus:border-brand-accent w-full md:w-80">
+            <button onclick="alert('✅ Subscribed successfully! check your inbox.')" class="bg-brand-accent text-white font-bold px-6 py-3 rounded-r-lg hover:bg-emerald-600 transition">
+                Subscribe
+            </button>
+        </div>
+    </div>
+</div>
+
+    <footer class="bg-black py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <i class="fa-solid fa-coins text-brand-accent text-3xl mr-2"></i>
+                        <span class="font-bold text-2xl tracking-tighter">Coin<span class="text-brand-accent">Cola</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Your trusted partner for liquidating digital assets. We provide a seamless, secure, and fast trading experience for Nigerians and the world.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#services" class="hover:text-brand-accent transition">Services</a></li>
+                        <li><a href="#trade-center" class="hover:text-brand-accent transition">Sell Gift Card</a></li>
+                        <li><a href="#trade-center" class="hover:text-brand-accent transition">Sell Crypto</a></li>
+                        <li><a href="#about" class="hover:text-brand-accent transition">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <h4 class="font-bold text-white mb-4">Connect With Us</h4>
+                    <div class="flex justify-center md:justify-end space-x-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-accent transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-green-500 transition">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-400 transition">
+                            <i class="fa-brands fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2026 CoinCola Brand. All rights reserved.</p>
+            </div>
+          <div class="mt-8 pt-8 border-t border-gray-900 flex justify-center gap-6 opacity-50 grayscale hover:grayscale-0 transition duration-500">
+    <div class="flex flex-col items-center">
+        <i class="fa-solid fa-lock text-2xl text-yellow-500 mb-1"></i>
+        <span class="text-[10px] text-gray-400 font-bold">Norton Secured</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <i class="fa-solid fa-shield-halved text-2xl text-green-500 mb-1"></i>
+        <span class="text-[10px] text-gray-400 font-bold">256-bit SSL</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <i class="fa-solid fa-shield-virus text-2xl text-red-500 mb-1"></i>
+        <span class="text-[10px] text-gray-400 font-bold">McAfee Safe</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <i class="fa-solid fa-copyright text-2xl text-blue-400 mb-1"></i>
+        <span class="text-[10px] text-gray-400 font-bold">DMCA Protected</span>
+    </div>
+</div>
+          <div class="border-t border-gray-900 mt-12 pt-8 text-left">
+    <p class="text-[10px] text-gray-600 leading-relaxed mb-4">
+        <strong>Risk Warning:</strong> Cryptocurrency trading involves significant risk and may result in the loss of your capital. You should not invest more than you can afford to lose and you should ensure that you fully understand the risks involved. Before trading, please take into consideration your level of experience, investment objectives, and seek independent financial advice if necessary.
+    </p>
+    <p class="text-[10px] text-gray-600 leading-relaxed">
+        CoinCola is a Digital Asset Exchange Provider. We are not a bank and do not offer banking services. Gift Card redemption services are provided by third-party partners. All trademarks and logos belong to their respective owners.
+    </p>
+</div>
+        </div>
+    </footer>
+
+    <script>
+        // --- CONFIGURATION ---
+        const whatsappNumber = "2348143361701"; // Replace with your actual number
+
+              // --- MANUAL GIFT CARD RATES (EDIT THESE) ---
+        const giftCardRates = {
+            steam: "1,250",   // Naira per Dollar
+            itunes: "1,100",
+            google: "1,150",
+            amazon: "1,050"
+        };
+
+        // Define your Wallet Addresses here
+        const wallets = {
+            "Bitcoin (BTC)": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+            "Ethereum (ETH)": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+            "USDT (TRC20)": "TQn9Y2khSzwKJpZrhP589pHSWf54LdD9cy",
+            "USDT (ERC20)": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+            "Solana (SOL)": "HN7cABqLq46Es1jh92dQQy4aWDnAq5ip",
+            "Litecoin (LTC)": "ltc1qrg3z5t5q5t5q5t5q5t5q5t5q5t5q5t5"
+        };
+
+        // --- TAB LOGIC ---
+        function switchTab(tabName) {
+            // Hide all content
+            document.getElementById('content-giftcard').classList.add('hidden');
+            document.getElementById('content-crypto').classList.add('hidden');
+            document.getElementById('content-social').classList.add('hidden');
+            
+            // Remove active class from buttons
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => btn.classList.remove('active', 'text-brand-accent'));
+            document.getElementById('tab-giftcard').classList.remove('text-purple-400');
+            document.getElementById('tab-crypto').classList.remove('text-brand-gold');
+
+            // Show selected content & activate button
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.classList.add('active');
+            
+            // Color logic for specific tabs
+            if(tabName === 'giftcard') activeBtn.classList.add('text-purple-400');
+            if(tabName === 'crypto') activeBtn.classList.add('text-brand-gold');
+        }
+
+        // --- WALLET LOGIC ---
+        function updateWalletAddress() {
+    const selectedCoin = document.getElementById('crypto-coin').value;
+    const display = document.getElementById('wallet-display');
+    const qrImage = document.getElementById('crypto-qr'); // <--- NEW
+    
+    // Update Label
+    const shortCode = selectedCoin.split('(')[1].replace(')', '');
+    document.getElementById('coin-label').innerText = shortCode;
+
+    if(wallets[selectedCoin]) {
+        const address = wallets[selectedCoin];
+        display.innerText = address;
+        
+        // <--- NEW: Generate QR Code via API --->
+        qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${address}`;
+        qrImage.parentElement.classList.remove('hidden');
+    } else {
+        display.innerText = "Address not available. Ask on WhatsApp.";
+        qrImage.parentElement.classList.add('hidden'); // Hide if no address
+    }
+}
+
+
+        function copyWallet() {
+            const text = document.getElementById('wallet-display').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Wallet address copied to clipboard!");
+            });
+        }
+
+        // --- IMAGE PREVIEW LOGIC ---
+        function previewImage(input, previewId) {
+            const container = document.getElementById(previewId);
+            container.innerHTML = ""; // Clear previous
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('preview-img', 'w-full', 'bg-slate-900', 'p-2');
+                    container.appendChild(img);
+                    container.classList.remove('hidden');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // --- WHATSAPP SENDING LOGIC ---
+        function openWhatsApp(message) {
+            // Encode the message for URL
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function handleGiftCard(e) {
+    e.preventDefault();
+
+    // 1. Get the Checkbox
+    const terms = document.getElementById('terms-checkbox-gc').checked;
+
+    // 2. Check if ticked
+    if (!terms) {
+        alert("⛔ You must agree to the Terms of Service to proceed.");
+        return; // Stop function here
+    }
+
+    // Data
+    const type = document.getElementById('gc-type').value;
+    const currency = document.getElementById('gc-currency').value;
+    const amount = document.getElementById('gc-amount').value;
+    const code = document.getElementById('gc-code').value; // <--- NEW CAPTURE
+    
+    // Bank Info
+    const bankName = document.getElementById('gc-bank-name').value;
+    const accNum = document.getElementById('gc-account-num').value;
+    const accName = document.getElementById('gc-account-name').value;
+    
+    const hasImage = document.getElementById('gc-image').files.length > 0;
+
+    // --- SAFETY CHECK ---
+    const agreement = confirm("⚠️ SAFETY WARNING:\n\n1. You are the owner of this card.\n2. You are NOT sending this for a third party.\n\nClick OK to proceed to WhatsApp.");
+    if (!agreement) return;
+
+    // Build Message
+    let msg = `*New Gift Card Sale Request*\n---------------------------\n`;
+    msg += `💳 *Card:* ${type}\n`;
+    msg += `💰 *Currency:* ${currency}\n`;
+    
+    // <--- NEW: ADD CODE TO MESSAGE IF TYPED --->
+    if(code) {
+        msg += `🔐 *Code:* ${code}\n`;
+    } else {
+        msg += `🔐 *Code:* (See Image)\n`;
+    }
+
+    msg += `💵 *Amount:* ${amount}\n`;
+          
+    msg += `\n*Payment Details (Credit Me Here):*\n`;
+    msg += `🏦 *Bank:* ${bankName}\n`;
+    msg += `🔢 *Account No:* ${accNum}\n`;
+    msg += `👤 *Name:* ${accName}\n`;
+    
+    if(hasImage) {
+        msg += `\n📸 *Note:* I have the card image ready to send.`;
+        alert("Opening WhatsApp... Please attach the card image you just selected into the chat.");
+    } else {
+        alert("Opening WhatsApp...");
+    }
+
+    openWhatsApp(msg);
+}
+
+        function handleCrypto(e) {
+            e.preventDefault();
+          // 1. Get the Checkbox
+    const terms = document.getElementById('terms-checkbox-gc').checked;
+
+    // 2. Check if ticked
+    if (!terms) {
+        alert("⛔ You must agree to the Terms of Service to proceed.");
+        return; // Stop function here
+    }
+            const coin = document.getElementById('crypto-coin').value;
+            const amount = document.getElementById('crypto-amount').value;
+            // Bank Info
+            const bankName = document.getElementById('crypto-bank-name').value;
+            const accNum = document.getElementById('crypto-account-num').value;
+            const accName = document.getElementById('crypto-account-name').value;
+
+            const hasImage = document.getElementById('crypto-image').files.length > 0;
+
+            // --- SAFETY CHECK ---
+            const agreement = confirm("⚠️ SAFETY WARNING:\n\n1. You are the owner of this assets.\n2. You are NOT sending this for a third party.\n\nClick OK to proceed to WhatsApp.");
+            if (!agreement) return;
+          
+            let msg = `*New Crypto Sale Request*\n---------------------------\n`;
+            msg += `🪙 *Coin:* ${coin}\n`;
+            msg += `💸 *Sent:* ${amount}\n\n`;
+            msg += `*Payment Details (Credit Me Here):*\n`;
+            msg += `🏦 *Bank:* ${bankName}\n`;
+            msg += `🔢 *Account No:* ${accNum}\n`;
+            msg += `👤 *Name:* ${accName}\n`;
+            
+            if(hasImage) {
+                msg += `\n📸 *Note:* I have the payment screenshot ready to send.`;
+                alert("Opening WhatsApp... Please attach the proof of transaction you just selected.");
+            } else {
+                alert("Opening WhatsApp...");
+            }
+
+            openWhatsApp(msg);
+        }
+
+        function handleSocial(e) {
+            e.preventDefault();
+            const platform = document.getElementById('social-platform').value;
+            const niche = document.getElementById('social-niche').value;
+            const followers = document.getElementById('social-followers').value;
+            const budget = document.getElementById('social-budget').value;
+
+            let msg = `*New Social Media Account Inquiry*\n---------------------------\n`;
+            msg += `📱 *Platform:* ${platform}\n`;
+            msg += `🎯 *Niche:* ${niche}\n`;
+            msg += `👥 *Followers:* ${followers}\n`;
+            if(budget) msg += `💰 *Budget:* ${budget}\n`;
+            
+            alert("Opening WhatsApp to finalize your order...");
+            openWhatsApp(msg);
+        }
+
+              // --- LIVE CRYPTO PRICES (COINGECKO API) ---
+        async function fetchCryptoPrices() {
+            try {
+                // Fetching BTC, ETH, USDT
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd&include_24hr_change=true');
+                const data = await response.json();
+
+                // Helper to format percentage color
+                const formatChange = (change) => {
+                    const color = change >= 0 ? 'text-green-500' : 'text-red-500';
+                    return `<span class="${color}">(${change.toFixed(2)}%)</span>`;
+                };
+
+                // Update DOM elements
+                if(data.bitcoin) {
+                    const btcText = `<i class="fa-brands fa-bitcoin text-brand-gold"></i> BTC: $${data.bitcoin.usd.toLocaleString()} ${formatChange(data.bitcoin.usd_24h_change)}`;
+                    document.getElementById('ticker-btc').innerHTML = btcText;
+                    document.getElementById('ticker-btc-2').innerHTML = btcText; // For loop
+                }
+                if(data.ethereum) {
+                    const ethText = `<i class="fa-brands fa-ethereum text-gray-300"></i> ETH: $${data.ethereum.usd.toLocaleString()} ${formatChange(data.ethereum.usd_24h_change)}`;
+                    document.getElementById('ticker-eth').innerHTML = ethText;
+                    document.getElementById('ticker-eth-2').innerHTML = ethText; // For loop
+                }
+                if(data.tether) {
+                    document.getElementById('ticker-usdt').innerHTML = `<i class="fa-solid fa-dollar-sign text-green-500"></i> USDT: $${data.tether.usd.toFixed(2)}`;
+                }
+
+            } catch (error) {
+                console.error("Error fetching crypto prices:", error);
+                document.getElementById('ticker-btc').innerHTML = "BTC: unavailable";
+            }
+        }
+
+        // --- SET MANUAL GIFT CARD RATES ---
+        function setGiftCardRates() {
+            document.getElementById('ticker-steam').innerHTML = `<i class="fa-solid fa-gift text-pink-400"></i> Steam: ₦${giftCardRates.steam}/$`;
+            document.getElementById('ticker-itunes').innerHTML = `<i class="fa-brands fa-apple text-white"></i> iTunes: ₦${giftCardRates.itunes}/$`;
+            document.getElementById('ticker-google').innerHTML = `<i class="fa-brands fa-google-play text-green-400"></i> Google: ₦${giftCardRates.google}/$`;
+            document.getElementById('ticker-amazon').innerHTML = `<i class="fa-brands fa-amazon text-brand-gold"></i> Amazon: ₦${giftCardRates.amazon}/$`;
+        }
+// --- LIVE NOTIFICATION LOGIC ---
+const names = ["Chioma", "David", "Ahmed", "Grace", "Emmanuel", "Tunde", "Sarah", "Ibrahim"];
+const actions = ["sold $50 Steam Card", "exchanged 0.02 BTC", "received ₦45,000", "sold $100 iTunes", "bought Instagram Acct", "sold 50 USDT"];
+const times = ["Just now", "2 mins ago", "5 mins ago", "1 min ago"];
+
+function showNotification() {
+    const container = document.getElementById('notification-container');
+    
+    // Pick random data
+    const name = names[Math.floor(Math.random() * names.length)];
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    
+    // Create Element
+    const notif = document.createElement('div');
+    notif.className = "bg-slate-800/90 border-l-4 border-brand-accent text-white p-4 rounded shadow-xl flex items-center transform translate-y-10 opacity-0 transition-all duration-500 w-72";
+    notif.innerHTML = `
+        <div class="bg-green-500/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+            <i class="fa-solid fa-check text-green-500"></i>
+        </div>
+        <div>
+            <p class="text-xs font-bold text-gray-400">Transaction Alert</p>
+            <p class="text-sm font-bold">${name} ${action}</p>
+        </div>
+    `;
+    
+    container.appendChild(notif);
+
+    // Animate In
+    setTimeout(() => {
+        notif.classList.remove('translate-y-10', 'opacity-0');
+    }, 100);
+
+    // Remove after 4 seconds
+    setTimeout(() => {
+        notif.classList.add('opacity-0', 'translate-y-10');
+        setTimeout(() => notif.remove(), 500);
+    }, 4000);
+}
+
+// Start loop (Show a popup every 8-15 seconds)
+setInterval(showNotification, 12000);
+
+        // Initialize
+                window.onload = function() {
+            updateWalletAddress(); // Your existing function
+            setGiftCardRates();    // NEW: Sets your manual rates
+            fetchCryptoPrices();   // NEW: Gets real crypto rates
+            
+            // Refreshes crypto price every 60 seconds
+            setInterval(fetchCryptoPrices, 60000); 
+      
+           // Preloader Logic
+           setTimeout(() => {
+           const preloader = document.getElementById('preloader');
+           preloader.style.opacity = '0'; // Fade out
+           setTimeout(() => {
+          preloader.style.display = 'none'; // Remove from page
+          }, 700);
+          }, 1500); // Wait 1.5 seconds
+       }
+
+      // Back to Top Logic
+window.addEventListener('scroll', function() {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+        btn.classList.remove('opacity-0');
+        btn.classList.add('opacity-100');
+    } else {
+        btn.classList.remove('opacity-100');
+        btn.classList.add('opacity-0');
+    }
+});
+
+    </script>
+
+  <div class="md:hidden fixed bottom-0 left-0 w-full bg-brand-darker/95 backdrop-blur-md border-t border-gray-800 z-40 flex justify-around items-center py-3 pb-safe">
+    <a href="#" onclick="window.scrollTo(0,0)" class="flex flex-col items-center text-gray-400 hover:text-brand-accent transition">
+        <i class="fa-solid fa-house text-xl mb-1"></i>
+        <span class="text-[10px]">Home</span>
+    </a>
+    <a href="#trade-center" onclick="switchTab('crypto')" class="flex flex-col items-center text-gray-400 hover:text-brand-gold transition">
+        <i class="fa-brands fa-bitcoin text-xl mb-1"></i>
+        <span class="text-[10px]">Crypto</span>
+    </a>
+    
+    <div class="relative -top-5">
+        <a href="#trade-center" class="w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30 border-4 border-brand-darker">
+            <i class="fa-solid fa-arrow-right-arrow-left text-white text-xl"></i>
+        </a>
+    </div>
+
+    <a href="#trade-center" onclick="switchTab('giftcard')" class="flex flex-col items-center text-gray-400 hover:text-purple-400 transition">
+        <i class="fa-solid fa-gift text-xl mb-1"></i>
+        <span class="text-[10px]">Cards</span>
+    </a>
+    <a href="https://wa.me/2348143361701" target="_blank" class="flex flex-col items-center text-gray-400 hover:text-green-500 transition">
+        <i class="fa-brands fa-whatsapp text-xl mb-1"></i>
+        <span class="text-[10px]">Support</span>
+    </a>
+</div>
+
+  <div id="notification-container" class="fixed bottom-20 left-4 z-40 flex flex-col gap-2 pointer-events-none">
+    </div>
+
+  <div id="login-modal" class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-light border border-gray-700 w-full max-w-md p-8 rounded-2xl relative shadow-2xl">
+        <button onclick="document.getElementById('login-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+
+        <div class="text-center mb-8">
+            <i class="fa-solid fa-user-lock text-brand-accent text-5xl mb-4"></i>
+            <h3 class="text-2xl font-bold text-white">Member Access</h3>
+            <p class="text-gray-400 text-sm mt-2">Enter your credentials to access your wallet.</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('⚠️ SYSTEM NOTICE:\n\nPublic registration is currently PAUSED due to high traffic.\n\nPlease continue trading as a Guest via WhatsApp.');" class="space-y-4">
+            <div>
+                <label class="block text-gray-500 text-xs font-bold mb-1">EMAIL ADDRESS</label>
+                <input type="email" class="w-full bg-brand-dark border border-gray-600 rounded p-3 text-white focus:border-brand-accent outline-none">
+            </div>
+            <div>
+                <label class="block text-gray-500 text-xs font-bold mb-1">PASSWORD</label>
+                <input type="password" class="w-full bg-brand-dark border border-gray-600 rounded p-3 text-white focus:border-brand-accent outline-none">
+            </div>
+            <button class="w-full bg-brand-accent text-white font-bold py-3 rounded hover:bg-emerald-600 transition">
+                Sign In
+            </button>
+        </form>
+        
+        <div class="mt-6 text-center">
+            <a href="#" class="text-xs text-gray-500 hover:text-brand-accent">Forgot Password?</a>
+        </div>
+    </div>
+</div>
+
+  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 right-6 z-40 bg-gray-800 text-white p-3 rounded-lg shadow-lg border border-gray-600 opacity-0 transition-opacity duration-300 hover:bg-brand-accent hidden md:block">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+  <div id="otc-modal" class="fixed inset-0 z-[70] bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-gray-900 to-black border border-brand-gold w-full max-w-2xl p-8 rounded-2xl relative shadow-[0_0_50px_rgba(251,191,36,0.2)]">
+        <button onclick="document.getElementById('otc-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fa-solid fa-xmark text-2xl"></i></button>
+        
+        <div class="flex items-center mb-6">
+            <i class="fa-solid fa-crown text-4xl text-brand-gold mr-4"></i>
+            <div>
+                <h2 class="text-3xl font-bold text-white">CoinCola OTC Desk</h2>
+                <p class="text-brand-gold text-sm font-bold uppercase tracking-widest">For trades above $5,000</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-gold mr-3"></i> Zero Transaction Fees</div>
+                <div class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-gold mr-3"></i> Private Account Manager</div>
+                <div class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-gold mr-3"></i> Priority Bank Transfer</div>
+                <div class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-gold mr-3"></i> Negotiable Custom Rates</div>
+            </div>
+            <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                <p class="text-xs text-gray-500 mb-2">CURRENT OTC RATE (USDT)</p>
+                <p class="text-3xl font-bold text-white mb-1">₦1,665.50</p>
+                <p class="text-green-500 text-xs">+5.00 above market</p>
+            </div>
+        </div>
+
+        <button onclick="openWhatsApp('I am interested in the VIP OTC Desk. I want to trade above $5,000.')" class="w-full bg-brand-gold text-black font-bold py-4 rounded-xl hover:bg-white transition flex justify-center items-center text-lg">
+            Contact VIP Agent <i class="fa-solid fa-arrow-right ml-2"></i>
+        </button>
+    </div>
+</div>
+
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    
+    <div id="chat-window" class="bg-white text-gray-800 w-80 rounded-2xl shadow-2xl mb-4 hidden overflow-hidden border border-gray-200 transform origin-bottom-right transition-all duration-300 scale-90 opacity-0">
+        <div class="bg-brand-dark p-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="relative">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border border-brand-dark"></div>
+                </div>
+                <div class="ml-3">
+                    <p class="text-white font-bold text-sm">Support Team</p>
+                    <p class="text-gray-400 text-xs">Typically replies in 2m</p>
+                </div>
+            </div>
+            <button onclick="toggleChat()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="p-4 bg-gray-50 h-64 overflow-y-auto" id="chat-body">
+            <div class="text-center text-xs text-gray-400 mb-4">Today</div>
+            
+            <div class="flex mb-3">
+                <div class="bg-white p-3 rounded-r-xl rounded-bl-xl shadow-sm border border-gray-100 max-w-[80%]">
+                    <p class="text-sm">Hello! Welcome to CoinCola. 👋</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-3 border-t bg-white">
+            <button onclick="openWhatsApp('I need help with a trade')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded-lg transition flex justify-center items-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <button onclick="toggleChat()" class="bg-brand-accent hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition hover:scale-110 relative">
+        <i class="fa-solid fa-comment-dots text-2xl"></i>
+        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold">1</span>
+    </button>
+</div>
+
+<script>
+    let chatOpen = false;
+    let hasGreeted = false;
+
+    function toggleChat() {
+        const window = document.getElementById('chat-window');
+        if(!chatOpen) {
+            window.classList.remove('hidden');
+            // Small delay to allow 'display:block' to apply before animating opacity
+            setTimeout(() => {
+                window.classList.remove('scale-90', 'opacity-0');
+            }, 10);
+            
+            // Simulate typing effect if first open
+            if(!hasGreeted) {
+                setTimeout(() => {
+                    const body = document.getElementById('chat-body');
+                    const typing = document.createElement('div');
+                    typing.innerHTML = `<div class="flex mb-3" id="typing-indicator"><div class="bg-gray-200 p-3 rounded-r-xl rounded-bl-xl shadow-sm max-w-[80%] text-xs text-gray-500 italic">Agent is typing...</div></div>`;
+                    body.appendChild(typing);
+                    body.scrollTop = body.scrollHeight;
+
+                    setTimeout(() => {
+                        document.getElementById('typing-indicator').remove();
+                        const msg = document.createElement('div');
+                        msg.innerHTML = `<div class="flex mb-3 animate-fade-in"><div class="bg-white p-3 rounded-r-xl rounded-bl-xl shadow-sm border border-gray-100 max-w-[80%]"><p class="text-sm">How can I help you with your Gift Card or Crypto trade today?</p></div></div>`;
+                        body.appendChild(msg);
+                        body.scrollTop = body.scrollHeight;
+                        hasGreeted = true;
+                    }, 1500);
+                }, 500);
+            }
+        } else {
+            window.classList.add('scale-90', 'opacity-0');
+            setTimeout(() => {
+                window.classList.add('hidden');
+            }, 300);
+        }
+        chatOpen = !chatOpen;
+    }
+</script>
+
+</body>
+</html>
