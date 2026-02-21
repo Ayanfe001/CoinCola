@@ -246,7 +246,7 @@
         <div class="liquid-glass mx-4 md:mx-auto max-w-7xl rounded-2xl mb-8 overflow-hidden">
             <div class="overflow-hidden whitespace-nowrap py-3 flex items-center relative">
                 <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[rgba(15,23,42,0.8)] to-transparent z-10 flex items-center px-4">
-                    <span class="text-brand-accent text-xs font-bold uppercase tracking-wider flex items-center"><span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse mr-2"></span>Live</span>
+                    <span class="text-brand-accent text-xs font-bold uppercase tracking-wider flex items-center"><span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse mr-2"></span>Live Rate</span>
                 </div>
                 <div class="animate-marquee inline-block text-sm text-gray-300 pl-24">
                     <span class="mx-6" id="ticker-btc"><i class="fa-brands fa-bitcoin text-brand-gold"></i> BTC: Loading...</span>
@@ -416,6 +416,7 @@
                                             <option value="USD" class="bg-brand-dark">USD ($) - USA</option>
                                             <option value="EUR" class="bg-brand-dark">EUR (€) - Euro</option>
                                             <option value="GBP" class="bg-brand-dark">GBP (£) - UK</option>
+                                            <option value="AUD" class="bg-brand-dark">AUD ($) - AUD</option>
                                         </select>
                                         <i class="fa-solid fa-chevron-down absolute right-5 top-5 text-gray-400 pointer-events-none"></i>
                                     </div>
@@ -594,6 +595,7 @@
                                     <label class="block text-gray-300 text-sm font-bold mb-2 ml-1">Platform</label>
                                     <div class="relative">
                                         <select id="social-platform" class="liquid-glass-input appearance-none cursor-pointer">
+                                            <option value="Facebook" class="bg-brand-dark">Facebook</option>
                                             <option value="Instagram" class="bg-brand-dark">Instagram</option>
                                             <option value="TikTok" class="bg-brand-dark">TikTok</option>
                                             <option value="Twitter/X" class="bg-brand-dark">Twitter / X</option>
@@ -645,10 +647,10 @@
                     <div class="w-full text-left">
                         <label class="block text-gray-400 text-sm font-bold mb-2 ml-1">Asset Type</label>
                         <select id="calc-asset" class="liquid-glass-input cursor-pointer">
-                            <option value="1100" class="bg-brand-dark">Steam Card (₦1,100)</option>
-                            <option value="1050" class="bg-brand-dark">iTunes Card (₦1,050)</option>
+                            <option value="950" class="bg-brand-dark">Steam Card (₦950)</option>
+                            <option value="1000" class="bg-brand-dark">iTunes Card (₦1,000)</option>
                             <option value="1350" class="bg-brand-dark">USDT (₦1,350)</option>
-                            <option value="114800000" class="bg-brand-dark">Bitcoin (1 BTC)</option>
+                            <option value="99200000" class="bg-brand-dark">Bitcoin (1 BTC)</option>
                         </select>
                     </div>
                     
@@ -1016,7 +1018,7 @@
     const whatsappNumber = "2348143361701"; 
 
     const giftCardRates = {
-        steam: "1,100",   
+        steam: "950",   
         itunes: "1,050",
         google: "1,100",
         amazon: "1,000"
